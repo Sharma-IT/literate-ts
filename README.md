@@ -16,9 +16,10 @@ Literate programming, introduced by Donald Knuth in 1984, is a programming parad
 ```
 literate-ts/
 ├── src/
-│   └── binary-search.ts   # Our example algorithm implementation
-├── package.json           # Project dependencies
-└── tsconfig.json         # TypeScript configuration
+│   ├── binary-search.ts      # My example algorithm implementation
+│   └── binary-search.test.ts # Comprehensive test suite
+├── package.json              # Project dependencies
+└── tsconfig.json            # TypeScript configuration
 ```
 
 ## Getting Started
@@ -38,12 +39,17 @@ literate-ts/
    npm start
    ```
 
-4. Generate documentation:
+4. Run tests:
+   ```bash
+   npm test
+   ```
+
+5. Generate documentation:
    ```bash
    npm run doc
    ```
 
-5. View documentation in browser:
+6. View documentation in browser:
    ```bash
    npx serve docs
    ```
@@ -53,7 +59,33 @@ literate-ts/
 
 This project demonstrates literate programming principles using a binary search algorithm implementation. The code is written in TypeScript with extensive documentation that explains not just how the algorithm works, but why certain implementation choices were made.
 
-I've used TypeScript's built-in JSDoc support along with markdown documentation to create a readable and maintainable codebase that serves as both documentation and working code.
+I use TypeScript's built-in JSDoc support along with markdown documentation to create a readable and maintainable codebase that serves as both documentation and working code.
+
+## Testing Strategy
+
+The project includes a comprehensive test suite that follows literate programming principles. The tests are organised into logical categories:
+
+1. **Number Arrays**
+   - Basic functionality with primitive number types
+   - Tests for elements at start, middle, and end
+   - Tests for non-existent elements
+
+2. **String Arrays**
+   - String comparison functionality
+   - Case sensitivity handling
+   - Tests with alphabetical ordering
+
+3. **Custom Objects**
+   - Testing with complex data structures
+   - Multiple comparison strategies (by age, by name)
+   - Custom type demonstrations
+
+4. **Edge Cases**
+   - Empty arrays
+   - Single-element arrays
+   - Arrays with duplicate values
+
+The test suite achieves 100% code coverage and serves as both verification of functionality and documentation of expected behavior.
 
 ## Key Features
 
@@ -69,3 +101,4 @@ By studying this project, you will learn:
 2. Best practices for TypeScript documentation
 3. How to balance technical implementation with narrative documentation
 4. Practical application of literate programming principles
+5. Test-driven development with literate programming
